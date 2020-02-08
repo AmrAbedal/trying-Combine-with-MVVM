@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-func fetchUserPosts(dataSource: FetchPostsDataSource) -> Just<[Post]> {
-    return dataSource.getPosts()
+func fetchUserPosts(dataSource: FetchPostsDataSource) -> Just<PostsScreenData> {
+    return dataSource.getPosts().map({ return $0.ScreenData})
 }
 

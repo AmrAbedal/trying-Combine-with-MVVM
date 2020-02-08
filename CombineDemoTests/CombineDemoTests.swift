@@ -14,6 +14,15 @@ class CombineDemoTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+    func testFetchPosts() {
+        fetchUserPosts(dataSource: MockFetchPostsDataSource()).sink(receiveValue: {
+            [weak self] postsScreenData in
+            guard case .success(let posts) = postsScreenData else {
+                return
+            }
+            XCTAssert(posts.count == 2 , "Test Succeed , posts Count = 2")
+        })
+    }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
