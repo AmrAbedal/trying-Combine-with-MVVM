@@ -24,23 +24,21 @@ public protocol ObservableObject : AnyObject {
 
 
 final class ViewModel: ObservableObject  {
+    private var dataSource: FetchPostsDataSource
+    typealias fetchPostsUseCaseType = (FetchPostsDataSource)->(Just<[Post]>)
+    private var fetchPostsUseCase: fetchPostsUseCaseType
+    init(fetchPostsDataSource: FetchPostsDataSource = MockFetchPostsDataSource(),
+        fetchPostUseCase: @escaping fetchPostsUseCaseType = fetchUserPosts) {
+        self.dataSource = fetchPostsDataSource
+        self.fetchPostsUseCase = fetchPostUseCase
+    }
     let objectWillChange = PassthroughSubject<Void, Never>()
-
     private (set) var posts: [Post] = []
 
        func viewDidLoad() {
-        let posts = [Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr"),
-        Post(name: "Amr")
-        ]
-        objectWillChange.send()
-
-        self.posts = posts
+        self.fetchPostsUseCase(dataSource).sink(receiveValue: {
+            [weak self] posts in
+            self?.objectWillChange.send()
+        })
        }
 }
