@@ -29,8 +29,7 @@ final class ViewModel: ObservableObject  {
     private (set) var posts: [Post] = []
 
        func viewDidLoad() {
-           objectWillChange.send()
-        posts = [Post(name: "Amr"),
+        let posts = [Post(name: "Amr"),
         Post(name: "Amr"),
         Post(name: "Amr"),
         Post(name: "Amr"),
@@ -42,5 +41,6 @@ final class ViewModel: ObservableObject  {
         ]
         objectWillChange.send()
 
+        self.posts = posts
        }
 }

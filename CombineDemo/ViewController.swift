@@ -17,8 +17,8 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.objectWillChange.sink(receiveValue: { [weak self]  in
-            guard let strongSelf = self
-                else { return }
+                  guard let strongSelf = self
+                      else { return }
             strongSelf.render(posts: strongSelf.viewModel.posts )
             })
         viewModel.viewDidLoad()
