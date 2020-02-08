@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import Combine
+
+func FetchPostsUseCase(dataSource: FetchPostsDataSource) -> Just<[Post]> {
+    return dataSource.getPosts()
+}
+
