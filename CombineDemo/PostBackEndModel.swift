@@ -9,9 +9,12 @@
 import Foundation
 
 struct PostBackEndModel {
+    let status: Status
     let name: String
     let post: String
     var ScreenData: PostScreenData {
         return PostScreenData(name: name)
     }
 }
+
+
