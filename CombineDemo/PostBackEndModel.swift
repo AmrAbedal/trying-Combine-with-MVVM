@@ -10,11 +10,21 @@ import Foundation
 
 struct PostBackEndModel {
     let status: Status
-    let name: String
-    let post: String
-    var ScreenData: PostScreenData {
-        return PostScreenData(name: name)
+    let data: [Post]
+    
+    var ScreenData: PostsScreenData {
+        if status.code == 200 {
+            return .success(data.map({$0.ScreenData}))
+        } else {
+            return .failed(AppError.businessError("Error"))
+        }
     }
 }
 
-
+struct Post {
+    var ScreenData: PostScreenData {
+           return PostScreenData(name: name)
+       }
+    let name: String
+    let post: String
+}

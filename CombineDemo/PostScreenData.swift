@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum PostsScreenData {
+    case loading, success([PostScreenData]), failed(AppError)
+}
+
 struct PostScreenData {
     let name: String
+}
+
+enum AppError {
+    case networkError,serverDown,businessError(String)
 }
