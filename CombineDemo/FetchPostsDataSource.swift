@@ -10,19 +10,12 @@ import Foundation
 import Combine
 
 protocol FetchPostsDataSource {
-    func getPosts() -> Just<[PostScreenData]>
+    func getPosts() -> Just<[PostBackEndModel]>
 }
 class MockFetchPostsDataSource: FetchPostsDataSource {
-    func getPosts() -> Just<[PostScreenData]> {
-        let posts = [PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr"),
-               PostScreenData(name: "Amr")
+    func getPosts() -> Just<[PostBackEndModel]> {
+        let posts = [PostBackEndModel(name: "Amr", post: "Hello SwiftUI 😀"),
+            PostBackEndModel(name: "Amr", post: "Hello Combine 🧑🏽‍💻")
                ]
         return Just.init(posts)
         

@@ -10,6 +10,8 @@ import Foundation
 import Combine
 
 func fetchUserPosts(dataSource: FetchPostsDataSource) -> Just<[PostScreenData]> {
-    return dataSource.getPosts()
+    return dataSource.getPosts().map({
+        return $0.map({$0.ScreenData})
+    })
 }
 
