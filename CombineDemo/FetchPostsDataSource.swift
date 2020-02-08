@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import Combine
 
 protocol FetchPostsDataSource {
-    func getPosts() -> [Post]
-    
+    func getPosts() -> Just<[Post]>
 }
 class MockFetchPostsDataSource: FetchPostsDataSource {
-    func getPosts() -> [Post] {
+    func getPosts() -> Just<[Post]> {
         let posts = [Post(name: "Amr"),
                Post(name: "Amr"),
                Post(name: "Amr"),
@@ -24,7 +24,7 @@ class MockFetchPostsDataSource: FetchPostsDataSource {
                Post(name: "Amr"),
                Post(name: "Amr")
                ]
-        return posts
+        return Just.init(posts)
         
     }
 }
