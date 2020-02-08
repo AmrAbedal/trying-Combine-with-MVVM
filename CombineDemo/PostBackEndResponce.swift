@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct PostBackEndModel {
+struct PostBackEndResponce {
     let status: Status
-    let data: [Post]
+    let data: [PostModel]
     
     var ScreenData: PostsScreenData {
         if status.code == 200 {
@@ -21,10 +21,4 @@ struct PostBackEndModel {
     }
 }
 
-struct Post {
-    var ScreenData: PostScreenData {
-           return PostScreenData(name: name)
-       }
-    let name: String
-    let post: String
-}
+
