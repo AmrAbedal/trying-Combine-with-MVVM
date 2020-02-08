@@ -10,19 +10,19 @@ import Foundation
 import Combine
 
 protocol FetchPostsDataSource {
-    func getPosts() -> Just<[Post]>
+    func getPosts() -> Just<[PostScreenData]>
 }
 class MockFetchPostsDataSource: FetchPostsDataSource {
-    func getPosts() -> Just<[Post]> {
-        let posts = [Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr"),
-               Post(name: "Amr")
+    func getPosts() -> Just<[PostScreenData]> {
+        let posts = [PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr"),
+               PostScreenData(name: "Amr")
                ]
         return Just.init(posts)
         

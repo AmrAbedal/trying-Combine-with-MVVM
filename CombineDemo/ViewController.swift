@@ -11,19 +11,19 @@ import Combine
 
 final class ViewController: UIViewController {
     @IBOutlet weak var postsTableView: UITableView!
-    var posts: [Post] = []
+    var posts: [PostScreenData] = []
     private var viewModel = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel.objectWillChange.sink(receiveValue: { [weak self]  in
+        viewModel.objectWillChange.sink(receiveValue: { [weak self] posts in
                   guard let strongSelf = self
                       else { return }
-            strongSelf.render(posts: strongSelf.viewModel.posts )
+            strongSelf.render(posts: posts )
             })
         viewModel.viewDidLoad()
     }
-    private func render(posts: [Post]) {
+    private func render(posts: [PostScreenData]) {
         self.posts = posts
         postsTableView.reloadData()
     }
