@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import Combine
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    @IBOutlet weak var postsTableView: UITableView!
+    var posts: [Post] = []
+    private var viewModel = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewModel.objectWillChange.sink(receiveValue: { [weak self]  in
+            guard let strongSelf = self
+                else { return }
+            strongSelf.render(posts: strongSelf.viewModel.posts )
+            })
+        viewModel.viewDidLoad()
     }
-
-
+    private func render(posts: [Post]) {
+        self.posts = posts
+        postsTableView.reloadData()
+    }
+}
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let  postCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        postCell.textLabel?.text = posts[indexPath.row].name
+        return postCell
+    }
 }
 

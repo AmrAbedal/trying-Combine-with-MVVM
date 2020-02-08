@@ -15,6 +15,7 @@
 		A0F3098623EAF572004D9E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F3098423EAF572004D9E5C /* LaunchScreen.storyboard */; };
 		A0F3099123EAF573004D9E5C /* CombineDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3099023EAF573004D9E5C /* CombineDemoTests.swift */; };
 		A0F3099C23EAF573004D9E5C /* CombineDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3099B23EAF573004D9E5C /* CombineDemoUITests.swift */; };
+		A0F309AA23EAF5A0004D9E5C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F309A923EAF5A0004D9E5C /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A01CAC4823EE326100E550FC /* AcceptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcceptSDK.framework; path = ../../Desktop/AcceptSDK.framework; sourceTree = "<group>"; };
+		A01CAC5023EE3C4100E550FC /* AcceptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcceptSDK.framework; path = ../../Downloads/AcceptSDK.framework; sourceTree = "<group>"; };
+		A01CAC5723EE3C6A00E550FC /* AcceptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcceptSDK.framework; path = ../../Downloads/AcceptSDK.framework/AcceptSDK.framework; sourceTree = "<group>"; };
 		A0F3097623EAF571004D9E5C /* CombineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F3097923EAF571004D9E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0F3097B23EAF571004D9E5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 		A0F3099723EAF573004D9E5C /* CombineDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F3099B23EAF573004D9E5C /* CombineDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoUITests.swift; sourceTree = "<group>"; };
 		A0F3099D23EAF573004D9E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F309A923EAF5A0004D9E5C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01CAC4723EE326100E550FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A01CAC5723EE3C6A00E550FC /* AcceptSDK.framework */,
+				A01CAC5023EE3C4100E550FC /* AcceptSDK.framework */,
+				A01CAC4823EE326100E550FC /* AcceptSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0F3096D23EAF571004D9E5C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,7 @@
 				A0F3098F23EAF573004D9E5C /* CombineDemoTests */,
 				A0F3099A23EAF573004D9E5C /* CombineDemoUITests */,
 				A0F3097723EAF571004D9E5C /* Products */,
+				A01CAC4723EE326100E550FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +118,7 @@
 				A0F3097923EAF571004D9E5C /* AppDelegate.swift */,
 				A0F3097B23EAF571004D9E5C /* SceneDelegate.swift */,
 				A0F3097D23EAF571004D9E5C /* ViewController.swift */,
+				A0F309A923EAF5A0004D9E5C /* ViewModel.swift */,
 				A0F3097F23EAF571004D9E5C /* Main.storyboard */,
 				A0F3098223EAF572004D9E5C /* Assets.xcassets */,
 				A0F3098423EAF572004D9E5C /* LaunchScreen.storyboard */,
@@ -261,6 +278,7 @@
 			files = (
 				A0F3097E23EAF571004D9E5C /* ViewController.swift in Sources */,
 				A0F3097A23EAF571004D9E5C /* AppDelegate.swift in Sources */,
+				A0F309AA23EAF5A0004D9E5C /* ViewModel.swift in Sources */,
 				A0F3097C23EAF571004D9E5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
